@@ -1,5 +1,6 @@
 <#ftl encoding="UTF-8"/>
 <#include "base.ftlh"/>
+<#import "spring.ftl" as spring />
 <#macro content>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -22,11 +23,11 @@
                     <#if user??>
                         <h5>${user.name}</h5>
                         <h5>${user.email}</h5>
-                        <h5>Do you want upload photo?
-                            <a href="/storage">Let's do it</a>
-                        </h5>
+                        <h5><@spring.message 'profile.page.photo'/></h5>
+                        <h5><a href="/storage"><@spring.message 'profile.page.doit'/></a></h5>
+
                         <div class="row second">
-                            <a href="/favourites" class="btn btn-primary">Favourite posts</a>
+                            <a href="/favourites" class="btn btn-primary"><@spring.message 'profile.page.favs'/></a>
                         </div>
 
                     </#if>

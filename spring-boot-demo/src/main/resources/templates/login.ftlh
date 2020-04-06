@@ -1,5 +1,6 @@
 <#ftl encoding="UTF-8"/>
 <#include "base.ftlh"/>
+<#import "spring.ftl" as spring />
 <#macro content>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -24,7 +25,7 @@
     <body>
 
     <#if isNotAuthorized??>
-        <h2>ОШИБКА ПОЧТЫ ИЛИ ПАРОЛЯ</h2>
+        <h2><@spring.message 'login.page.error'/></h2>
     </#if>
 
 
@@ -37,7 +38,7 @@
                     <!-- Default form login -->
                     <form class="text-center border border-light p-5" action="login" method = "post">
 
-                        <p class="h4 mb-4">Join us!</p>
+                        <p class="h4 mb-4"><@spring.message 'login.page.join'/></p>
 
                         <!-- Login -->
                         <input type="text" id="defaultLoginFormLogin" class="form-control mb-4" placeholder="email"
@@ -55,18 +56,17 @@
                                     <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember"
                                            value="Yes"
                                            name="checkbox">
-                                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember
-                                        me</label>
+                                    <label class="custom-control-label" for="defaultLoginFormRemember"><@spring.message 'login.page.remember'/></label>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Sign in button -->
-                        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                        <button class="btn btn-info btn-block my-4" type="submit"><@spring.message 'login.page.signin'/></button>
 
                         <!-- Register -->
-                        <p>Have not you join us yet?
-                            <a href="/registration">Let's do it</a>
+                        <p>
+                            <a href="/registration"><@spring.message 'login.page.reg'/></a>
                         </p>
                     </form>
                 </div>

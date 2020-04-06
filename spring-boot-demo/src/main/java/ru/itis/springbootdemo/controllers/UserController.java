@@ -22,7 +22,7 @@ public class UserController {
             User user = userDetails.getUser();
             if (fileStorageService.takeUrl(user.getId()) != null)
             {
-                String path = fileStorageService.takeUrl(user.getId()).toString();
+                String path = fileStorageService.takeUrl(user.getId());
                 String url = "http://localhost:8080/files/" + path ;
                 model.addAttribute("url", url);
             }

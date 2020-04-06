@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#import "spring.ftl" as spring />
 <#macro content></#macro>
 <#macro main>
     <!doctype html>
@@ -11,10 +12,10 @@
         </a>
         <div class="navbar-button-wrapper">
             <#if user??>
-                <a href="/profile" class="btn btn-light">Profile</a>
-                <a href="/logout" class="btn btn-light">Logout</a>
+                <a href="/profile" class="btn btn-light"><@spring.message 'base.page.profile'/></a>
+                <a href="/logout" class="btn btn-light"><@spring.message 'base.page.logout'/></a>
             <#else>
-                <a href="/login" class="btn btn-light">Login</a>
+                <a href="/login" class="btn btn-light"><@spring.message 'base.page.login'/></a>
             </#if>
         </div>
     </nav>
