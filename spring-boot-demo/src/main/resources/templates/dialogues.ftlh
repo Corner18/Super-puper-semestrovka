@@ -12,7 +12,7 @@
     <title>Title</title>
     <body>
 
-    <!------ Include the above in your HEAD tag ---------->
+
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -29,26 +29,17 @@
 
             <div class="row">
                 <div class="col-md-9">
-                    <#list posts as post>
-
+                    <#list dialogues as dialogue>
                         <div class="row border">
-
-
                             <div class="col-md-4 car-image-block">
-                                <li><a href="/post/${post.id}" class="list">${post.header}</a></li>
+                                <li><a href="/admin/${dialogue}" class="list">${dialogue}</a></li>
                             </div>
-
-
                         </div>
                     </#list>
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
 
     </body>
 </#macro>

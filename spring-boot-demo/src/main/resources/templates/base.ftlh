@@ -14,6 +14,10 @@
             <#if user??>
                 <a href="/profile" class="btn btn-light"><@spring.message 'base.page.profile'/></a>
                 <a href="/logout" class="btn btn-light"><@spring.message 'base.page.logout'/></a>
+                <a href="/support" class="btn btn-light"><@spring.message 'base.page.chat'/></a>
+                <#if user.role == "ADMIN">
+                    <a href="/admin" class="btn btn-light">ADMIN</a>
+                </#if>
             <#else>
                 <a href="/login" class="btn btn-light"><@spring.message 'base.page.login'/></a>
             </#if>

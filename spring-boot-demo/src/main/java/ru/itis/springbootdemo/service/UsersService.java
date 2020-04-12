@@ -11,4 +11,6 @@ public interface UsersService {
     User getUser(Long userId);
 
     User getUserByCookie(String cookie);
+
+    User getAdmin();
 }

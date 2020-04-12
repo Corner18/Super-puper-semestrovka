@@ -25,7 +25,7 @@ public class FavouritePostsController {
             List<Post> postList = favouritesService.favs(userDetails.getUser().getId());
             model.addAttribute("posts", postList);
             model.addAttribute("user", userDetails.getUser());
-            return "favourite_posts";
+            return "posts";
         }
         return "redirect:/login";
     }

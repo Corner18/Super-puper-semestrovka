@@ -12,8 +12,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 img">
-                <#if url?has_content>
-                    <img src="${url}" width="300" height="150"
+                <#if user.avatar??>
+                    <img src="${user.avatar}" width="300" height="150"
                          alt="" class="img-rounded">
                 </#if>
 

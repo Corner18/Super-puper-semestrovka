@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import ru.itis.springbootdemo.models.Role;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -26,6 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/storage").authenticated()
                 .antMatchers("/profile").authenticated()
+                .antMatchers("/support").authenticated()
+                .antMatchers("/admin").hasAuthority(Role.ADMIN.name())
+                .antMatchers("/chat").authenticated()
                 .antMatchers("/").authenticated();
 
         http.formLogin()

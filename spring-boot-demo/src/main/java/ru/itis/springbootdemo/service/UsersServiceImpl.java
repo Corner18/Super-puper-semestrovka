@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.itis.springbootdemo.dto.UserDto;
 import ru.itis.springbootdemo.models.CookieValue;
+import ru.itis.springbootdemo.models.Role;
 import ru.itis.springbootdemo.models.User;
 import ru.itis.springbootdemo.repositories.CookieValuesRepository;
 import ru.itis.springbootdemo.repositories.UsersRepository;
@@ -34,12 +35,18 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public User getUserByCookie(String cookie) {
         Optional<CookieValue> cookieValueOptional = cookieValuesRepository.findByValue(cookie);
-        if(cookieValueOptional.isPresent()){
+        if (cookieValueOptional.isPresent()) {
             CookieValue cookieValue = cookieValueOptional.get();
             Long id = cookieValue.getUser().getId();
             User user = usersRepository.getOne(id);
             return user;
         }
         return null;
+    }
+
+    @Override
+    public User getAdmin() {
+        Optional<User> userOptional = usersRepository.findByRole(Role.ADMIN);
+        return userOptional.orElse(null);
     }
 }

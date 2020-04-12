@@ -18,8 +18,8 @@
           integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
     <div class="active-purple-4 mb-4" style="width: 300px; display: inline-block; margin-left: 600px; margin-top: 10px">
-        <form id="search-form">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <form id="search-form" method="post" action="/search/posts">
+            <input class="form-control" type="text" placeholder="Search" name="q">
         </form>
     </div>
     <div style="display: inline-block"><input type="submit" form="search-form" class="btn btn-light"></div>

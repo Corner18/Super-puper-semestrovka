@@ -20,12 +20,6 @@ public class UserController {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         if (userDetails != null) {
             User user = userDetails.getUser();
-            if (fileStorageService.takeUrl(user.getId()) != null)
-            {
-                String path = fileStorageService.takeUrl(user.getId());
-                String url = "http://localhost:8080/files/" + path ;
-                model.addAttribute("url", url);
-            }
             model.addAttribute("user", user);
             return "profile";
         } else {
